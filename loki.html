@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lokesh Saini | Ultra Premium Portfolio</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+/* Animated Background */
+
+body::before{
+content:'';
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%,#38bdf850,transparent 25%),
+radial-gradient(circle at 80% 30%,#8b5cf650,transparent 25%),
+radial-gradient(circle at 50% 80%,#06b6d450,transparent 25%);
+z-index:-1;
+animation:moveBg 10s infinite alternate;
+}
+
+@keyframes moveBg{
+100%{
+transform:scale(1.2);
+}
+}
+
+/* Navbar */
+
+header{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
+/* Hero */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 10%;
+gap:50px;
+}
+
+.hero-text{
+flex:1;
+}
+
+.hero-text h1{
+font-size:60px;
+}
+
+.hero-text span{
+color:#38bdf8;
+}
+
+.hero-text h2{
+margin-top:10px;
+color:#38bdf8;
+}
+
+.hero-text p{
+margin:20px 0;
+line-height:1.8;
+color:#d1d5db;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+margin-right:10px;
+background:#38bdf8;
+color:white;
+border-radius:50px;
+text-decoration:none;
+transition:.4s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px #38bdf8;
+}
+
+
+.hero-img{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-img img{
+    width:350px;
+    height:350px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #38bdf8;
+    box-shadow:0 0 30px #38bdf8;
+}
+@keyframes float{
+50%{
+transform:translateY(-15px);
+}
+}
+
+/* Sections */
+
+section{
+padding:100px 10%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+color:#38bdf8;
+margin-bottom:50px;
+}
+
+/* Glass Cards */
+
+.glass{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:20px;
+padding:30px;
+}
+
+/* Skills */
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.skill{
+padding:20px;
+}
+
+.skill h3{
+margin-bottom:10px;
+}
+
+.bar{
+height:10px;
+background:#1e293b;
+border-radius:20px;
+overflow:hidden;
+}
+
+.fill{
+height:100%;
+background:#38bdf8;
+}
+
+/* Projects */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+padding:25px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px) rotateX(5deg);
+}
+
+.card h3{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+/* Timeline */
+
+.timeline{
+position:relative;
+max-width:800px;
+margin:auto;
+}
+
+.timeline::after{
+content:'';
+position:absolute;
+width:4px;
+background:#38bdf8;
+top:0;
+bottom:0;
+left:50%;
+}
+
+.event{
+padding:20px;
+width:50%;
+position:relative;
+}
+
+.event.left{
+left:0;
+}
+
+.event.right{
+left:50%;
+}
+
+/* Contact */
+
+.contact form{
+max-width:600px;
+margin:auto;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+}
+
+.contact button{
+border:none;
+cursor:pointer;
+}
+
+.social{
+text-align:center;
+margin-top:30px;
+}
+
+.social a{
+font-size:30px;
+margin:0 12px;
+color:#38bdf8;
+}
+
+/* Counter */
+
+.counter{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+text-align:center;
+}
+
+.counter-box h2{
+font-size:40px;
+color:#38bdf8;
+}
+
+/* Footer */
+
+footer{
+padding:25px;
+text-align:center;
+background:#111827;
+}
+
+/* Dark Light Toggle */
+
+.toggle{
+cursor:pointer;
+font-size:24px;
+}
+
+.light{
+background:#f8fafc;
+color:black;
+}
+
+.light nav a{
+color:black;
+}
+
+.light .glass{
+background:white;
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:40px;
+}
+
+.hero-img img{
+width:280px;
+height:280px;
+}
+
+.timeline::after{
+left:20px;
+}
+
+.event{
+width:100%;
+left:0 !important;
+padding-left:50px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Lokesh</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="toggle" onclick="themeToggle()">
+<i class="fas fa-moon"></i>
+</div>
+</header>
+
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Hi, I'm <span>Lokesh Saini</span></h1>
+
+        <h2 id="typing">Python Developer</h2>
+
+        <p>
+            B.Tech Computer Science Student passionate about
+            Python, Data Analytics, SQL, Power BI and Web Development.
+        </p>
+
+        <a href="#" class="btn">Download Resume</a>
+        <a href="#contact" class="btn">Hire Me</a>
+    </div>
+
+    <div class="hero-img">
+        <img src="C:\Users\LENOVO\Downloads\profile.jpg.jpeg" alt"lokesh">
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">About Me</h2>
+
+<div class="glass">
+I am a Computer Science student who enjoys building
+modern websites, analyzing data and solving problems
+using technology.
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Achievements</h2>
+
+<div class="counter">
+
+<div class="glass counter-box">
+<h2>10+</h2>
+<p>Projects</p>
+</div>
+
+<div class="glass counter-box">
+<h2>15+</h2>
+<p>Skills</p>
+</div>
+
+<div class="glass counter-box">
+<h2>100+</h2>
+<p>Practice Programs</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="title">Skills</h2>
+
+<div class="skills">
+
+<div class="glass skill">
+<h3>Python</h3>
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+</div>
+
+<div class="glass skill">
+<h3>SQL</h3>
+<div class="bar"><div class="fill" style="width:80%"></div></div>
+</div>
+
+<div class="glass skill">
+<h3>Power BI</h3>
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
+
+<div class="glass skill">
+<h3>Web Development</h3>
+<div class="bar"><div class="fill" style="width:88%"></div></div>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="title">Projects</h2>
+
+<div class="projects">
+
+<div class="glass card">
+<h3>Fashion Avenue</h3>
+<p>E-commerce website with Login, Register and Cart.</p>
+</div>
+
+<div class="glass card">
+<h3>Car Rental System</h3>
+<p>Vehicle booking management project.</p>
+</div>
+
+<div class="glass card">
+<h3>Restaurant Dashboard</h3>
+<p>Power BI & Python Data Analytics Project.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Career Timeline</h2>
+
+<div class="timeline">
+
+<div class="event left glass">
+<h3>2022</h3>
+<p>Started B.Tech CSE</p>
+</div>
+
+<div class="event right glass">
+<h3>2024</h3>
+<p>Built Car Rental Project</p>
+</div>
+
+<div class="event left glass">
+<h3>2025</h3>
+<p>Started Data Analytics & Power BI</p>
+</div>
+
+<div class="event right glass">
+<h3>2026</h3>
+<p>Building Professional Portfolio</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="title">Contact Me</h2>
+
+<div class="contact">
+
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Message"></textarea>
+<button class="btn">Send Message</button>
+</form>
+
+<div class="social">
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Lokesh Saini | Ultra Premium Portfolio
+</footer>
+
+<script>
+
+const words = [
+"Python Developer",
+"Data Analyst",
+"Web Developer",
+"Power BI Enthusiast"
+];
+
+let i=0;
+
+setInterval(()=>{
+document.getElementById("typing").innerHTML=words[i];
+i=(i+1)%words.length;
+},2000);
+
+function themeToggle(){
+document.body.classList.toggle("light");
+}
+
+</script>
+
+</body>
+</html>
